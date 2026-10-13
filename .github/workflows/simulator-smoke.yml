@@ -1,0 +1,30 @@
+name: iPhone UI Check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'qa/**'
+      - '.github/workflows/simulator-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  simulator:
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode 26
+        run: bash scripts/select-xcode26.sh
+      - name: Launch iPhone simulator and capture screen
+        run: bash qa/simulator-smoke.sh
+      - name: Upload screen and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iPhone-UI-check
+          path: |
+            qa-output/*.png
+            qa-output/*.json
+            qa-output/*.log
+          retention-days: 14

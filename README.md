@@ -7,7 +7,7 @@
 ## 当前交付状态
 
 - 已提供原生 Swift 源码、可直接打开的 Xcode 工程、数据层测试和手动云编译流程。
-- 当前电脑是 Windows，未运行 Xcode、未生成经过验证的 IPA，也未在你的 iPhone 上验收。界面相似程度还需要在实机上对照确认。
+- 已使用 GitHub 云端 Xcode 成功编译 iPhone ARM64 IPA，SDK 为 iOS 26.5，27 项数据测试通过。下载包已检查完整性、设备平台、应用标识和可执行文件架构。IPA 尚未签名，需要在自己的电脑上签名后安装；尚未在你的 iPhone 上验收。
 - 工程最低支持 iOS 18，目标设备为 iPhone，竖屏；编译工具为 Xcode 26。桌面名称为「电话簿」，Bundle ID 为 `com.personal.calljournal`。
 - 无通讯录、麦克风、相机、位置、通知或后台权限声明，无联网代码和第三方运行时依赖。
 - 已在 Windows 的 WSL 环境使用 Swift 6.0.3 编译数据层并运行 27 项 XCTest，全部通过；原生页面的 Swift 语法检查通过。这不等同于使用 Apple SDK 完成 iOS 编译。
@@ -24,6 +24,8 @@
 编译 iOS 原生 App 仍需要 Apple 的 Xcode 工具链。你不用购买或借用 Mac：可以让 GitHub Actions 的 macOS 机器编译源码，再用 Windows 给生成的 IPA 签名、安装。云编译需要网络；安装成功后 App 本身可以离线使用。
 
 ### 1. 准备源码仓库
+
+本次源码已按你的授权上传到公开仓库 [a1934249816-dotcom/aimfly](https://github.com/a1934249816-dotcom/aimfly)，[首次成功编译](https://github.com/a1934249816-dotcom/aimfly/actions/runs/38367478674)。你无需再创建仓库才能使用本次提供的 IPA。下面是以后自行维护或重新打包时的步骤。
 
 1. 注册或登录你自己的 GitHub 账号，创建一个 **Private（私有）** 仓库。
 2. 用 GitHub Desktop 克隆这个仓库到 Windows。将本文件所在的 `CallJournal` 文件夹内的全部内容复制到仓库根目录，包括隐藏的 `.github` 文件夹。不要在仓库根目录外层再套一层 `CallJournal`。
