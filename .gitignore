@@ -1,0 +1,17 @@
+.DS_Store
+.build/
+.swiftpm/
+build/
+DerivedData/
+*.ipa
+*.xcarchive
+*.xcresult
+xcuserdata/
+*.xcuserstate
+*.p12
+*.mobileprovision
+*.cer
+*.key
+.env
+Preview/node_modules/
+Preview/.cache/

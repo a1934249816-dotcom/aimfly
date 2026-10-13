@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="电话">
+  <title>电话</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main id="phone" class="phone" aria-label="电话">
+    <div class="statusbar" aria-hidden="true"><span id="status-time">9:41</span><span class="status-right"><i class="signal"></i><i class="wifi"></i><i class="battery"></i></span></div>
+    <div id="screen" class="screen"></div>
+    <nav id="tabs" class="tabbar" aria-label="标签栏"></nav>
+    <div class="home-indicator" aria-hidden="true"></div>
+    <div id="overlay"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

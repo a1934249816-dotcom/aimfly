@@ -1,0 +1,44 @@
+name: Build iPhone App
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'CallJournal/**'
+      - 'Sources/**'
+      - 'Tests/**'
+      - 'CallJournal.xcodeproj/**'
+      - 'Package.swift'
+      - 'scripts/**'
+      - '.github/workflows/build-ios.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 25
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Select installed Xcode 26
+        shell: bash
+        run: bash scripts/select-xcode26.sh
+      - name: Validate project and test local data
+        shell: bash
+        run: |
+          python3 scripts/validate-project.py
+          plutil -lint CallJournal.xcodeproj/project.pbxproj CallJournal.xcodeproj/Info.plist
+          swift test
+      - name: Build unsigned iPhone package
+        shell: bash
+        run: bash scripts/build-unsigned-ipa.sh
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: CallJournal-unsigned-iphone
+          path: build/CallJournal-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14

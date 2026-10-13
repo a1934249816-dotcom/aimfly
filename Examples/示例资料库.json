@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "contacts": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "name": "林先生",
+      "phoneNumber": "13800000000",
+      "label": "手机",
+      "isFavorite": true
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "name": "陈女士",
+      "phoneNumber": "13800000001",
+      "label": "手机",
+      "isFavorite": true
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "name": "王先生",
+      "phoneNumber": "13800000002",
+      "label": "手机",
+      "isFavorite": false
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "name": "李女士",
+      "phoneNumber": "13800000003",
+      "label": "手机",
+      "isFavorite": false
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000005",
+      "name": "张先生",
+      "phoneNumber": "13800000004",
+      "label": "手机",
+      "isFavorite": false
+    }
+  ],
+  "calls": [
+    {
+      "id": "00000000-0000-4000-8000-000000000101",
+      "contactID": "00000000-0000-4000-8000-000000000001",
+      "phoneNumber": "13800000000",
+      "label": "手机",
+      "date": "2026-10-13T02:38:12Z",
+      "durationSeconds": 87,
+      "direction": "incoming"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000102",
+      "contactID": "00000000-0000-4000-8000-000000000002",
+      "phoneNumber": "13800000001",
+      "label": "手机",
+      "date": "2026-10-13T01:15:27Z",
+      "durationSeconds": 312,
+      "direction": "outgoing"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000103",
+      "contactID": "00000000-0000-4000-8000-000000000003",
+      "phoneNumber": "13800000002",
+      "label": "手机",
+      "date": "2026-10-12T10:31:45Z",
+      "durationSeconds": 0,
+      "direction": "missed"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000104",
+      "contactID": "00000000-0000-4000-8000-000000000004",
+      "phoneNumber": "13800000003",
+      "label": "手机",
+      "date": "2026-10-12T07:06:30Z",
+      "durationSeconds": 198,
+      "direction": "incoming"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000105",
+      "contactID": "00000000-0000-4000-8000-000000000005",
+      "phoneNumber": "13800000004",
+      "label": "手机",
+      "date": "2026-10-11T04:42:17Z",
+      "durationSeconds": 56,
+      "direction": "outgoing"
+    }
+  ],
+  "preferences": {
+    "layout": "classic",
+    "appearance": "light"
+  }
+}
